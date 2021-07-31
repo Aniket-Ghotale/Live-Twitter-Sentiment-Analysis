@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../static/twitter.png" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles.css')}}"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Twitter </span>Sentiment Analysis</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="/home">Home</a></li>
+            <li><a href="/result">Result</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="pred">
+      <div class="container">
+        <h1>Enter the Topic of Tweets for Sentiment Analysis.</h1>
+        <form action="/predict" method="POST">
+          <input
+            id="textarea"
+            type="text"
+            name="Tweet"
+            placeholder="Enter topic about tweet"
+            rows="4"
+            cols="50"
+          />
+          <input type="submit" value="Analyse" class="button" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
